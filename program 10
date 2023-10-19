@@ -1,0 +1,17 @@
+from PIL import Image
+
+def move_image(input_image_path, output_image_path, x_offset, y_offset):
+    with Image.open(input_image_path) as img:
+        new_x = img.size[0] + x_offset
+        new_y = img.size[1] + y_offset
+
+        new_img = Image.new('RGB', (new_x, new_y))
+        new_img.paste(img, (x_offset, y_offset))
+        new_img.save(output_image_path)
+
+        new_img.show()
+input_image_path = 'C:/Users/KANTA/OneDrive/Pictures/m.jpg'
+output_image_path = 'C:/Users/KANTA/OneDrive/Pictures/m.jpg'
+x_offset = 50  
+y_offset = 30  
+move_image(input_image_path, output_image_path, x_offset, y_offset)
