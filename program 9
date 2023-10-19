@@ -1,0 +1,17 @@
+from PIL import Image
+
+def rotate_clockwise(image_path, degrees):
+    with Image.open(image_path) as img:
+        rotated_img = img.rotate(-degrees)  
+        rotated_img.show()
+
+def rotate_counterclockwise(image_path, degrees):
+    with Image.open(image_path) as img:
+        rotated_img = img.rotate(degrees)  
+        rotated_img.show()
+image_path = 'C:/Users/KANTA/OneDrive/Pictures/m.jpg'
+rotation_degrees = 45
+print("Rotating clockwise...")
+rotate_clockwise(image_path, rotation_degrees)
+print("Rotating counterclockwise...")
+rotate_counterclockwise(image_path, rotation_degrees)
